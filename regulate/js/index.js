@@ -206,7 +206,7 @@ function packagingAjax(url, data, callback) {
         url: 'http://open.duyiedu.com' + url,
         type: 'get',
         data: $.extend({
-            appkey: 'Q_A_Q_1590927055348'
+            appkey: 'zhuchunyu_1591064522934'
         }, data),
         dataType: 'json',
         success: function (res) {
