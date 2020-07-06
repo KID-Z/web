@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>学生管理系统登录</title>
+    <link rel="stylesheet" href="./login.css">
+</head>
+
+<body>
+    <form action="#" id="login">
+        <h2>登录
+            <a href="./reister.html">注册</a>
+        </h2>
+        <div>
+            <label for="account">
+                账号:
+            </label>
+            <input type="text" id="account" name="account">
+        </div>
+        <div>
+            <label for="password">密码:</label>
+            <input type="password" id="password" name="password">
+        </div>
+        <div>
+            <label for=""></label>
+            <input class="btn" type="submit" value="提交" id="submit-btn">
+            <input class="btn" type="reset" value="重置">
+        </div>
+    </form>
+    <script src="./js/cookie.js"></script>
+    <script src="./js/jquery-3.4.1.js"></script>
+    <script>
+        setCookie('username', '', -1);
+        $('#submit-btn').click(function (e) {
+            e.preventDefault();
+            var info = $('#login').serializeArray();
+            if (account && password) {
+                $.ajax({
+                    url: 'http://open.duyiedu.com/api/student/stuLogin',
+                    type: 'post',
+                    data: {
+                        appkey: 'zhuchunyu_1591064522934',
+                        account: info[0].value,
+                        password: info[1].value
+                    },
+                    dataType: 'json',
+                    success: function (res) {
+                        if (res.status === "success") {
+                            setCookie('username', info[0].value, 86400)
+                            location.href = './index.html'
+                        } else {
+                            alert(res.msg)
+                        }
+                    }
+                })
+            }
+
+        })
+
+    </script>
+
+</body>
+
+</html>

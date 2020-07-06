@@ -1,0 +1,26 @@
+ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.myPageDiv,
+.myTurnPage {
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+}
+
+
+.myTurnPage li {
+    padding: 2px 5px;
+    border: 1px solid #eee;
+    margin: 0 3px;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.myTurnPage li.active {
+    background-color: #428bca;
+    color: aliceblue;
+}

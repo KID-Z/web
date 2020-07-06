@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./images/logo.ico">
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./turnpage/turnpage.css">
+    <title>学生管理系统</title>
+</head>
+
+<body>
+    <div class="header">
+        <div class="logo">
+            <img src="./images/logo.png" alt="">
+            <span>学生管理系统</span>
+        </div>
+        <ul class="user">
+            <li class="username"></li>
+            <li class="logout">
+                <a href="./login.html">退出</a>
+            </li>
+        </ul>
+    </div>
+    <div class="left-menu">
+        <dl class="menu">
+            <dt class="left-menulist-title">学生管理</dt>
+            <dd class="active" data-id="student-list">学生列表</dd>
+            <dd data-id="student-add">新增学生</dd>
+        </dl>
+    </div>
+    <div class="right-content">
+        <div id="student-list">
+            <div id="studList">
+                <div class="search">
+                    <label for="search-word">关键字搜索</label>
+                    <input type="text" id="search-word">
+                    <input type="button" id="search-submit" value="搜索">
+                </div>
+            </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>学号</th>
+                            <th>姓名</th>
+                            <th>性别</th>
+                            <th>邮箱</th>
+                            <th>年龄</th>
+                            <th>手机号</th>
+                            <th>住址</th>
+                            <th>操作</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbody">
+
+                    </tbody>
+                </table>
+                <div class="modal">
+                    <div class="modal-content">
+                        <h2>编辑</h2>
+                        <form action="" id="eait-student-form">
+                            <div><label for="eait-name">姓名</label><input type="text" id="eait-name" name="name"></div>
+                            <div>
+                                <label for="">性别</label>
+                                <input type="radio" name="sex" id="eait-male" checked value="0">
+                                <label for="eait-male" class="sex">男</label>
+                                <input type="radio" name="sex" id="eait-female" value="1">
+                                <label for="eait-female" class="sex">女</label>
+                            </div>
+                            <div><label for="eait-email">邮箱</label><input type="text" id="eait-email" name="email">
+                            </div>
+                            <div><label for="eait-sNo">学号</label><input type="text" id="eait-sNo" name="sNo" readonly>
+                            </div>
+                            <div><label for="eait-birth">出生年</label><input type="text" id="eait-birth" name="birth">
+                            </div>
+                            <div><label for="eait-phone">手机号</label><input type="text" id="eait-phone" name="phone">
+                            </div>
+                            <div><label for="eait-address">住址</label><input type="text" id="eait-address"
+                                    name="address">
+                            </div>
+                            <div><label for=""></label>
+                                <button id="eait-submit" class="btn">提交</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="turn-page">
+                </div>
+            </div>
+            <div id="student-add">
+                <form action="" id="add-student-form">
+                    <div><label for="name">姓名</label><input type="text" id="name" name="name"></div>
+                    <div>
+                        <label for="">性别</label>
+                        <input type="radio" name="sex" id="male" checked value="0">
+                        <label for="male" class="sex">男</label>
+                        <input type="radio" name="sex" id="female" value="1">
+                        <label for="female" class="sex">女</label>
+                    </div>
+                    <div><label for="email">邮箱</label><input type="text" id="email" name="email"></div>
+                    <div><label for="sNo">学号</label><input type="text" id="sNo" name="sNo"></div>
+                    <div><label for="birth">出生年</label><input type="text" id="birth" name="birth"></div>
+                    <div><label for="phone">手机号</label><input type="text" id="phone" name="phone"></div>
+                    <div><label for="address">住址</label><input type="text" id="address" name="address"></div>
+                    <div><label for=""></label>
+                        <button id="add-submit" class="btn">提交</button>
+                        <input type="reset" class="btn">
+                    </div>
+                </form>
+            </div>
+        </div>
+        <script src="./js/cookie.js"></script>
+        <script src="./js/jquery-3.4.1.js"></script>
+        <script src="./turnpage/turnpage.js"></script>
+        <script src="./js/index.js"></script>
+</body>
+
+</html>

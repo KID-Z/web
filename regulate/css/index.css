@@ -1,0 +1,246 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+}
+
+:root {
+    height: 100%;
+}
+
+body {
+    font-size: 14px;
+    background-color: #eee;
+}
+
+.header {
+    width: 100%;
+    height: 70px;
+    line-height: 70px;
+    background-color: #354457;
+    position: fixed;
+    top: 0;
+    left: 0;
+    color: #b3bcc5;
+    z-index: 99;
+}
+
+.header .logo {
+    padding-left: 20px;
+}
+
+.header .logo img {
+    width: 30px;
+    height: 30px;
+    vertical-align: -7px;
+
+}
+
+.header .user {
+    position: absolute;
+    right: 0;
+    top: 0;
+    cursor: pointer;
+}
+
+.header .user:hover {
+    background-color: #fff;
+    color: #354457;
+}
+
+.header .user:hover .logout {
+    display: block;
+}
+
+.header .user .logout {
+    display: none;
+}
+
+.header .user .logout:hover {
+    background-color: #ddd;
+}
+
+.header .user li {
+    padding: 0 40px;
+
+}
+
+.left-menu {
+    width: 200px;
+    position: fixed;
+    left: 0;
+    top: 70px;
+    height: calc(100% - 70px);
+    background-color: #4d5e70;
+    color: #b3bcc5;
+    line-height: 40px;
+}
+
+.left-menu .active {
+    background-color: #fff;
+    color: #354457;
+}
+
+.left-menu .left-menulist-title {
+    padding-left: 8px;
+    padding-top: 10px;
+    font-weight: bold;
+}
+
+.left-menu dd {
+    padding-left: 30px;
+    cursor: pointer;
+}
+
+.left-menu dd:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+    color: #354457;
+}
+
+.right-content {
+    margin-top: 70px;
+    margin-left: 200px;
+    background-color: #eee;
+    position: relative;
+
+}
+
+#student-list {
+    width: 100%;
+}
+
+#student-list table {
+    width: 100%;
+    text-align: center;
+    line-height: 30px;
+}
+
+#student-list table thead {
+    background-color: #e3e8ee;
+    color: #646987;
+}
+
+#student-list table tbody {
+    background-color: #fff;
+}
+
+#student-list table .btn {
+    outline: none;
+    border: none;
+    padding: 3px 10px;
+    cursor: pointer;
+    color: #fff;
+}
+
+#student-list table .edit {
+    background-color: #5cb85c;
+}
+
+#student-list table .remove {
+    background-color: #d9534f;
+}
+
+#student-add {
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    display: none;
+}
+
+#add-student-form,
+#eait-student-form {
+    width: 400px;
+    margin: 50px auto;
+}
+
+form label:not(.sex) {
+    width: 100px;
+    display: inline-block;
+    text-align: right;
+    margin-right: 10px;
+}
+
+form {
+    font-size: 16px;
+}
+
+form div {
+    margin: 10px 0;
+}
+
+form .btn {
+    padding: 5px 17px;
+    text-align: center;
+}
+
+.modal {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 200;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+}
+
+.modal .modal-content {
+    width: 500px;
+    height: 400px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    background-color: #fff;
+    padding: 20px;
+}
+
+.turn-page {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+.turn-page>div {
+    padding: 5px 10px;
+    border: 1px solid #ddd;
+    cursor: pointer;
+}
+
+
+.search {
+    height: 60px;
+    line-height: 60px;
+    padding: 0 10px;
+}
+
+.search label {
+    font-size: 16px;
+    color: #646987;
+    font-weight: 800;
+}
+
+.search #search-word {
+    font-size: 16px;
+    width: 200px;
+    height: 30px;
+    border: none;
+    padding-left: 20px;
+}
+
+.search #search-submit {
+    height: 28px;
+    line-height: 28px;
+    padding: 0 10px;
+    outline: none;
+    display: inline-block;
+    border: none;
+    background-color: #354457;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+}

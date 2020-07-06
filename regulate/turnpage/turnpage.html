@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="turnpage.css">
+</head>
+
+<body>
+    <div class="demo"></div>
+
+    <script src="../js/jquery-3.4.1.js"></script>
+    <script src="turnpage.js"></script>
+    <script>
+        $('.demo').page({
+            size: 10,
+            current: 5,
+            // allSize: 100,
+            allPage: 10,
+            changePage: function (a, b) {
+                console.log(a, b)
+            }
+        })
+    </script>
+</body>
+
+</html>
