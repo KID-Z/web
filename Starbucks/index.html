@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>Document</title>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css"
+		integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+	<link rel="stylesheet" href="//at.alicdn.com/t/font_1967351_7ous2l0aew6.css">
+	<style>
+		html {
+			font-size: 62.5% !important;
+			/* 取默认字体的百分比 */
+		}
+
+		@media (min-width: 992px) {
+			html {
+				font-size: 62.5%;
+			}
+		}
+
+		@media (min-width: 768px) {
+			html {
+				font-size: 59%;
+			}
+		}
+
+		@media (min-width: 576px) {
+			html {
+				font-size: 56%
+			}
+		}
+
+		body {
+			overflow-x: hidden;
+		}
+
+		a:hover {
+			text-decoration: none;
+		}
+
+		.leftCon {
+			left: 0;
+		}
+
+		.leftCon header {
+			height: 80px;
+		}
+
+		.leftCon ul a {
+			font-size: 1.65rem;
+		}
+
+		.leftCon .icon-caidan1 {
+			font-size: 2.5rem;
+			color: #858585;
+			cursor: pointer;
+		}
+
+		.logo {
+			height: calc(100vh - 80px);
+		}
+
+		.logo .icon-kafei {
+			font-size: 3rem;
+		}
+
+		.logo .icon-denglu {
+			font-size: 20px;
+		}
+
+		.logo div div button {
+			font-size: 1.5rem;
+			border-radius: 12px;
+		}
+
+		.logo div div span,
+		.menu .icon-guanbi,
+		.menu .list span {
+			cursor: pointer;
+		}
+
+		.menu {
+			width: 100%;
+			height: 100vh;
+			background: #fff;
+			position: absolute;
+			left: 0;
+			top: 0;
+			z-index: 1024;
+			padding: 0px 15px 40px 15px;
+			transition: .3s;
+		}
+
+		.menu footer a,
+		.menu footer span {
+			color: rgba(0, 0, 0, 0.38);
+			font-size: 1.4rem;
+		}
+
+		.menu .list ul {
+			list-style: none;
+			padding: 0;
+		}
+
+		.menu .list ul li {
+			margin: 1.5rem 0;
+		}
+
+		.hide {
+			opacity: 0;
+			z-index: -1;
+			transform: scale(2);
+		}
+
+		.show {
+			opacity: 1;
+			transform: scale(1);
+		}
+
+		@media (max-width: 991.98px) {
+			.leftCon {
+				position: relative !important;
+			}
+
+			.logo {
+				height: auto;
+			}
+		}
+
+		.arrows {
+			font-size: 5rem;
+			font-weight: bold;
+		}
+
+		.start h2 {
+			font-size: 2.2rem;
+			margin-bottom: 2rem;
+		}
+
+		.start p {
+			font-size: 1.6rem;
+			color: rgba(0, 0, 0, 0.56);
+		}
+
+		.start p a {
+			color: #C2A661;
+		}
+
+		.start button {
+			border-radius: 2rem;
+			font-size: 1.5rem;
+		}
+
+		.title h3 {
+			font-size: 2.5rem;
+		}
+
+		.title p {
+			color: rgba(0, 0, 0, 0.56);
+			font-size: 1.5rem;
+		}
+
+		.title ul {
+			margin-top: 56px;
+		}
+
+		.title ul a {
+			box-shadow: 0 1px 1px 1px rgba(0, 0, 0, 0.12);
+			transition: .3s;
+		}
+
+		.title ul a:hover {
+			box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.22);
+			transform: translateY(-5px);
+		}
+
+		.title .title-list h4 {
+			font-size: 1.6rem;
+			color: black;
+			font-weight: bold;
+		}
+
+		.title .title-list {
+			font-size: 1.4rem;
+			color: rgba(0, 0, 0, 0.56) !important;
+		}
+
+		.title .caption {
+			font-size: 1.2rem;
+			color: #C2A661;
+			opacity: 0.7;
+		}
+
+		.title .title-list img {
+			margin-top: -36px;
+			height: 72px;
+		}
+
+
+		.teah ul {
+			width: 1216px;
+		}
+
+		.teah li {
+			width: 288px;
+			position: relative;
+			box-shadow: 0 1px 1px 1px rgba(0, 0, 0, 0.12);
+			transition: .3s;
+		}
+
+		.teah li:hover {
+			box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.22);
+			transform: translateY(-5px);
+		}
+
+		.teah .logo1 {
+			position: absolute;
+			font-size: 1.4rem;
+			background: #C2A661;
+			left: 0;
+			top: 6px;
+			color: #fff;
+			padding: 3px 5px;
+		}
+
+		.footer ul {
+			box-shadow: 0 0 4px rgba(0, 0, 0, 0.12);
+		}
+
+		.footer ul li a {
+			color: rgba(0, 0, 0, 0.56);
+			font-size: 1.2rem;
+		}
+
+		.footer .iconfont {
+			font-size: 2rem;
+		}
+
+		.footer ul li a.active {
+			color: #00A862 !important;
+		}
+	</style>
+</head>
+
+<body>
+
+	<div class="container-fluid">
+		<div class="row justify-content-end">
+			<!-- 左侧区域 -->
+			<div class="col-lg-4  border-right position-fixed leftCon">
+				<header class="navbar d-none d-sm-flex px-0 px-lg-3 py-3 py-lg-4">
+					<a href="#" class="navbar-brand">
+						<img src="./images/logo.svg" width="36" class="align-top">
+					</a>
+
+					<ul class="nav mr-auto">
+						<li class="nav-item">
+							<a href="#" class="nav-link text-dark font-weight-bold">门店</a>
+						</li>
+						<li class="nav-item">
+							<a href="#" class="nav-link text-dark font-weight-bold">我的账户</a>
+						</li>
+						<li class="nav-item">
+							<a href="#" class="nav-link text-dark font-weight-bold">菜单</a>
+						</li>
+					</ul>
+					<span class="iconfont icon-caidan1" id="showBtn"></span>
+				</header>
+				<div class="logo d-flex align-items-center ">
+					<div class="px-0 px-lg-5">
+						<h1 class="font-weight-bold py-4">心情惬意，来杯咖啡吧 <span class="iconfont icon-kafei"></span></h1>
+						<div class="my-4  align-items-center d-none d-sm-flex">
+							<span class="iconfont icon-denglu mr-5 text-success">登录</span>
+							<button class="btn btn-outline-success px-3">注册</button>
+						</div>
+					</div>
+				</div>
+				<div class="menu d-flex flex-column justify-content-between hide">
+					<header class="navbar">
+						<a href="#" class="navbar-brand">
+							<img src="./images/logo.svg" width="36" class="align-top">
+						</a>
+						<span class="iconfont icon-guanbi" id="hideBtn"></span>
+					</header>
+					<div class="list">
+						<ul class="ml-sm-5">
+							<li><a href="" class="text-dark font-weight-bold">门店</a></li>
+							<li><a href="" class="text-dark font-weight-bold">星享俱乐部</a></li>
+							<li><a href="" class="text-dark font-weight-bold">菜单</a></li>
+							<hr>
+							<li><a href="" class="text-dark font-weight-bold">星巴克移动应用</a></li>
+							<li><a href="" class="text-dark font-weight-bold">星礼卡</a></li>
+							<li><a href="" class="text-dark font-weight-bold"> 啡快™ － 在线点 到店取</a></li>
+							<li><a href="" class="text-dark font-weight-bold">专星送™</a></li>
+							<li><a href="" class="text-dark font-weight-bold">咖啡星讲堂</a></li>
+							<li><a href="" class="text-dark font-weight-bold">上海烘焙工坊</a></li>
+							<li><a href="" class="text-dark font-weight-bold">关于星巴克</a></li>
+							<li><a href="" class="text-dark font-weight-bold">帮助中心</a></li>
+							<hr>
+						</ul>
+						<div class="my-4 ml-sm-5 align-items-center d-sm-flex">
+							<span class="iconfont icon-denglu mr-5 text-success">登录</span>
+							<button class="btn btn-outline-success px-3">注册</button>
+						</div>
+					</div>
+
+					<footer>
+						<a href="">English</a> <span>|</span> <a href="">隐私政策</a> <span>|</span> <a href="">使用条款</a>
+					</footer>
+				</div>
+			</div>
+			<!-- 右侧区域 -->
+			<div class="col-lg-8 bg-light" id="row-right">
+				<div class="row">
+					<div class="carousel slide carousel-fade" data-ride="carousel" id="pic">
+						<div class="carousel-inner">
+							<div class="carousel-item active">
+								<img src="./images/kv1.jpg" class="img-fluid">
+							</div>
+							<div class="carousel-item">
+								<img src="./images/kv2.jpg" class="img-fluid">
+							</div>
+							<div class="carousel-item">
+								<img src="./images/kv3.jpg" class="img-fluid">
+							</div>
+							<div class="carousel-item">
+								<img src="./images/kv4.jpg" class="img-fluid">
+							</div>
+						</div>
+						<a href="#pic" class="carousel-control-prev" data-slide="prev">
+							<span class="iconfont icon-zuojiantou-copy arrows"></span>
+						</a>
+						<a href="#pic" class="carousel-control-next" data-slide="next">
+							<span class="iconfont icon-iconfontjiantou5 arrows"></span>
+						</a>
+						<ol class="carousel-indicators">
+							<li data-target="#pic" data-slide-to="0" class="active"></li>
+							<li data-target="#pic" data-slide-to="1"></li>
+							<li data-target="#pic" data-slide-to="2"></li>
+							<li data-target="#pic" data-slide-to="3"></li>
+						</ol>
+					</div>
+				</div>
+				<!-- 三张图片 -->
+				<div class="row py-4">
+					<div class="col-sm-4 py-3 py-sm-0">
+						<a href=""><img src="./images/img_01.jpg" class="img-fluid img-thumbnail " alt=""></a>
+					</div>
+					<div class="col-sm-4 py-3 py-sm-0">
+						<a href=""><img src="./images/img_02.jpg" class="img-fluid img-thumbnail " alt=""></a>
+					</div>
+					<div class="col-sm-4 py-3 py-sm-0">
+						<a href=""><img src="./images/img_03.jpg" class="img-fluid img-thumbnail " alt=""></a>
+					</div>
+				</div>
+				<!-- 星享俱乐部 -->
+				<div class="row align-items-center bg-white text-center py-5 px-5 start">
+					<div class="col-sm-5 text-sm-left">
+						<h2>星享俱乐部</h2>
+						<p>开启您的星享之旅，星星越多、会员等级越高、好礼越丰富。<a href="">了解更多 ›</a></p>
+						<div class="btn py-3 pl-0">
+							<button class="btn btn-outline-success px-4">登录</button>
+							<button class="btn btn-outline-success px-4">注册</button>
+						</div>
+					</div>
+					<div class="col text-sm-right mt-5 mt-sm-0"><img src="./images/logo-msr-new.svg" alt=""></div>
+				</div>
+				<!-- 星巴克精选 -->
+				<div class="col-12 title py-3">
+					<div class="col-12 title text-center">
+						<h3 class="mt-5">星巴克精选</h3>
+						<p class="mt-3">在星巴克天猫旗舰店发现更多咖啡心意</p>
+					</div>
+					<ul class="row d-flex justify-content-around px-5 list-unstyled title-list">
+						<li class="col-6 col-md-3 mb-5 mb-md-0">
+							<a href="#" class="d-block bg-white px-3 text-center">
+								<img src="./images/tmall-card-01.png" class="img-fluid" alt="">
+								<h4 class="px-2">会员星礼包</h4>
+								<p class="pb-3">星享卡新升级<br>更多心意好礼</p>
+								<p class="caption pb-5">了解更多 ›</p>
+							</a>
+						</li>
+						<li class="col-6 col-md-3 mb-5 mb-md-0">
+							<a href="#" class="d-block bg-white px-3 text-center">
+								<img src="./images/tmall-card-02.png" class="img-fluid" alt="">
+								<h4 class="px-2">星礼卡</h4>
+								<p class="pb-3">用一份心礼<br>让心意相随</p>
+								<p class="caption pb-5">了解更多 ›</p>
+							</a>
+						</li>
+						<li class="col-6 col-md-3 mt-5 mt-md-0">
+							<a href="#" class="d-block bg-white px-3 text-center">
+								<img src="./images/tmall-card-03.png" class="img-fluid" alt="">
+								<h4 class="px-2">电子商品券</h4>
+								<p class="pb-3">心意<br>从这一杯开始</p>
+								<p class="caption pb-5">了解更多 ›</p>
+							</a>
+						</li>
+						<li class="col-6 col-md-3 mt-5 mt-md-0">
+							<a href="#" class="d-block bg-white px-3 text-center">
+								<img src="./images/tmall-card-04.png" class="img-fluid" alt="">
+								<h4 class="px-2">咖啡生活</h4>
+								<p class="pb-3">星巴克<br>用心制作</p>
+								<p class="caption pb-5">了解更多 ›</p>
+							</a>
+						</li>
+					</ul>
+				</div>
+				<!-- 咖啡星讲堂 -->
+				<div class="row bg-white teah">
+					<div class="col-12 title text-center">
+						<h3 class="mt-5">1912 派克街 | 咖啡星讲堂</h3>
+						<p class="mt-3">了解更多星巴克咖啡文化</p>
+					</div>
+
+					<div class="col-12">
+						<div class="scroll pl-3">
+							<ul class="list-unstyled d-flex  justify-content-between">
+								<li class="card">
+									<a href="#">
+										<img class="card-img-top" src="./images/scroll_img_01.jpg" alt="">
+									</a>
+									<div class="card-body">
+										<h3 class="card-title">咖啡的起源于培植</h3>
+									</div>
+									<span class="logo1">咖啡知识</span>
+								</li>
+								<li class="card">
+									<a href="#">
+										<img class="card-img-top" src="./images/scroll_img_02.jpg" alt="">
+									</a>
+									<div class="card-body">
+										<h3 class="card-title">咖啡调制</h3>
+									</div>
+									<span class="logo1">咖啡品鉴</span>
+								</li>
+								<li class="card">
+									<a href="#">
+										<img class="card-img-top" src="./images/scroll_img_03.jpg" alt="">
+									</a>
+									<div class="card-body">
+										<h3 class="card-title">咖啡烘焙</h3>
+									</div>
+									<span class="logo1">咖啡知识</span>
+								</li>
+								<li class="card">
+									<a href="#">
+										<img class="card-img-top" src="./images/scroll_img_04.jpg" alt="">
+									</a>
+									<div class="card-body">
+										<h3 class="card-title">手冲咖啡</h3>
+									</div>
+									<span class="logo1">咖啡品鉴</span>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<footer class="footer bg-white py-2 fixed-bottom">
+		<ul class="d-flex list-unstyled justify-content-around mb-0">
+			<li class="text-center">
+				<a href="#" class="active">
+					<span class="iconfont icon-daohangshouye d-block"></span>
+					<span>主页</span>
+				</a>
+			</li>
+			<li class="text-center">
+				<a href="#">
+					<span class="iconfont icon-mendian d-block"></span>
+					<span>门店</span>
+				</a>
+			</li>
+			<li class="text-center">
+				<a href="#">
+					<span class="iconfont icon-weibiaoti51 d-block"></span>
+					<span>我的账户</span>
+				</a>
+			</li>
+			<li class="text-center">
+				<a href="#">
+					<span class="iconfont icon-caidan d-block"></span>
+					<span>菜单</span>
+				</a>
+			</li>
+			<li class="text-center">
+				<a href="#">
+					<span class="iconfont icon-weibiaoti5 d-block"></span>
+					<span>更多</span>
+				</a>
+			</li>
+		</ul>
+
+	</footer>
+
+
+	<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+		integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+		crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+		integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+		crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.min.js"
+		integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+		crossorigin="anonymous"></script>
+	<script>
+		$('#showBtn').on('click', function () {
+			$('.menu').removeClass('hide').addClass('show');
+			shadowMenu();
+		});
+		$('#hideBtn').on('click', function () {
+			$('.menu').removeClass('show').addClass('hide');
+			shadowMenu();
+		});
+
+		$(window).resize(shadowMenu);
+
+		function shadowMenu() {
+			if ($(window).innerWidth() <= 992 && $('.menu').hasClass('show')) {
+				$('#row-right').css('opacity', '0');
+				$('body').css('overflow', 'hidden');
+
+			} else {
+				$('#row-right').css('opacity', '1');
+				$('body').css('overflow', 'auto');
+			}
+		}
+	</script>
+</body>
+
+</html>
