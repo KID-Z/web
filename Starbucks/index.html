@@ -24,6 +24,7 @@
 			html {
 				font-size: 59%;
 			}
+
 		}
 
 		@media (min-width: 576px) {
@@ -198,10 +199,15 @@
 			height: 72px;
 		}
 
+		.teah {
+			padding-bottom: 60px;
+		}
 
 		.teah ul {
 			width: 1216px;
 		}
+
+		
 
 		.teah li {
 			width: 288px;
@@ -213,6 +219,17 @@
 		.teah li:hover {
 			box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.22);
 			transform: translateY(-5px);
+		}
+		@media (max-width: 767.98px) {
+			.teah ul {
+				width: auto;
+			}
+			.teah li {
+			width: 48%;
+			position: relative;
+			box-shadow: 0 1px 1px 1px rgba(0, 0, 0, 0.12);
+			transition: .3s;
+		}
 		}
 
 		.teah .logo1 {
@@ -427,7 +444,7 @@
 									</div>
 									<span class="logo1">咖啡知识</span>
 								</li>
-								<li class="card">
+								<li class="card ">
 									<a href="#">
 										<img class="card-img-top" src="./images/scroll_img_02.jpg" alt="">
 									</a>
@@ -436,7 +453,7 @@
 									</div>
 									<span class="logo1">咖啡品鉴</span>
 								</li>
-								<li class="card">
+								<li class="card d-none d-md-block">
 									<a href="#">
 										<img class="card-img-top" src="./images/scroll_img_03.jpg" alt="">
 									</a>
@@ -445,7 +462,7 @@
 									</div>
 									<span class="logo1">咖啡知识</span>
 								</li>
-								<li class="card">
+								<li class="card d-none d-md-block">
 									<a href="#">
 										<img class="card-img-top" src="./images/scroll_img_04.jpg" alt="">
 									</a>
