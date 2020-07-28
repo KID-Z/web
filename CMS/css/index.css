@@ -1,0 +1,403 @@
+html,
+body {
+    font-size: 14px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.wrapper {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+}
+
+.header-top {
+    position: fixed;
+    width: 100%;
+    height: 4.5rem;
+    background: linear-gradient(90deg, #333, #222, #aaa);
+}
+
+.header-top .logo {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    margin-left: 3rem;
+}
+
+.header-top .logo img {
+    width: 3rem;
+    height: 3rem;
+}
+
+.header-top .logo span {
+    margin-left: 1rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 4px 2px 5px #ccc;
+    animation: titleLogo .5s infinite alternate;
+}
+
+.header-top .logo span:nth-of-type(1) {
+    animation-delay: 0s;
+}
+
+.header-top .logo span:nth-of-type(2) {
+    animation-delay: 0.25s;
+}
+
+.header-top .logo span:nth-of-type(3) {
+    animation-delay: 0.5s;
+}
+
+.header-top .logo span:nth-of-type(4) {
+    animation-delay: 0.75s;
+}
+
+@keyframes titleLogo {
+    0% {
+        transform: translateY(0px);
+        text-shadow: 4px 0px 5px #ccc;
+    }
+
+    100% {
+        transform: translateY(-17px);
+        text-shadow: 4px 4px 5px #ccc;
+    }
+}
+
+.header-top::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 4.5rem;
+    background: url(../images/bg.png) center;
+    opacity: .4;
+}
+
+.header-top .btn {
+    border: 1px solid #fff;
+    padding: 8px 10px;
+    position: absolute;
+    border-radius: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 30px;
+    cursor: pointer;
+    z-index: 10;
+    display: none;
+    transition: .5s;
+}
+
+.header-top .btn:hover {
+    transform: translateY(-50%) scale(1.1, 1.1);
+}
+
+.header-top .btn:hover span {
+    animation: btnDeg 2s infinite;
+}
+
+.header-top .btn span {
+    width: 22px;
+    height: 2px;
+    display: block;
+    background-color: #fff;
+    margin: 5px 0;
+}
+
+@keyframes btnDeg {
+    0% {
+        transform: translateY(-50%);
+        transform: rotate(0deg);
+    }
+
+    25% {
+        transform: translateY(-50%);
+        transform: rotate(45deg);
+    }
+
+    50% {
+        transform: translateY(-50%);
+        transform: rotate(0deg);
+    }
+
+    75% {
+        transform: translateY(-50%);
+        transform: rotate(-45deg);
+    }
+
+    100% {
+        transform: translateY(-50%);
+        transform: rotate(0deg);
+    }
+}
+
+.header-top .list {
+    background: linear-gradient(#333, #222, #111);
+    position: relative;
+    top: 4.5rem;
+    text-align: center;
+    display: none;
+
+}
+
+
+.header-top ul {
+    padding: 30px;
+    font-size: 1.1rem;
+    box-sizing: border-box;
+    color: #ccc;
+}
+
+.header-top ul li {
+    line-height: 40px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.header-top ul li:hover {
+    color: #fff;
+}
+
+
+.left-menu {
+    position: fixed;
+    top: 4.5rem;
+    width: 200px;
+    height: calc(100vh - 4.5rem);
+    background: linear-gradient(#333, #222, #111);
+    padding: 2rem 0 0 2rem;
+    box-sizing: border-box;
+}
+
+.left-menu .list {
+    width: 100%;
+    font-weight: bolder;
+}
+
+.left-menu .list::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url(../images/bg.png) repeat center center;
+    opacity: .4;
+    z-index: -1;
+}
+
+.left-menu .list h3 {
+    color: #fff;
+}
+
+.left-menu .list ul {
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.left-menu .list ul li {
+    line-height: 40px;
+    color: #ccc;
+    cursor: pointer;
+    margin-bottom: 5px;
+    transition: .3s;
+}
+
+.left-menu .list ul li:hover {
+    color: #fff;
+}
+
+.left-menu .list .active {
+    background-color: rgba(255, 255, 255, .3);
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    color: #fff;
+}
+
+.right-content {
+    background: rgba(0, 0, 0, .1);
+    padding: 4.5rem 0 0 200px;
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+.right-content .item {
+    display: none;
+    padding: 20px;
+}
+
+.right-content .show-item {
+    display: block;
+}
+
+@media all and (max-width:768px) {
+    .header-top .logo {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .header-top .btn {
+        display: block;
+    }
+
+    .left-menu {
+        display: none;
+    }
+
+    .right-content {
+        padding-left: 0;
+        text-align: center;
+    }
+}
+
+table {
+    width: 100%;
+    line-height: 40px;
+    text-align: center;
+}
+
+table thead {
+    background-color: #ccc;
+}
+
+table tbody {
+    background-color: #fff;
+}
+
+#tbody button {
+    border: 0;
+    padding: 5px 10px;
+    font-size: 1rem;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: .5s;
+}
+
+#tbody button:hover {
+    opacity: .5;
+}
+
+#tbody button:nth-of-type(1) {
+    background-color: #006400;
+}
+
+#tbody button:nth-of-type(2) {
+    background-color: #CD0000;
+}
+
+
+#form-add-student {
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
+    color: #333;
+}
+
+#form-add-student .form-item,
+#edit-form .form-item {
+    margin: 10px 0;
+}
+
+#form-add-student .form-item input[type=text],
+#edit-form .form-item input[type=text] {
+    border: 1px solid #ccc;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 8px;
+    width: 200px;
+    outline: none;
+}
+
+#form-add-student .form-item .cno,
+#edit-form .form-item .cno {
+    display: inline-block;
+    width: 200px;
+    text-align: left;
+}
+
+#form-add-student .form-item .cno input,
+#edit-form .form-item .cno input {
+    vertical-align: -2px;
+}
+
+#form-add-student .form-item label:first-child,
+#edit-form .form-item label:first-child {
+    width: 50px;
+    display: inline-block;
+}
+
+#btn-add-student,
+#btn-edit-form {
+    margin-top: 20px;
+}
+
+#btn-edit-form {
+    text-align: center;
+}
+
+#btn-add-student button,
+#btn-edit-form button,
+#btn-add-student .reset,
+#btn-edit-form .reset {
+    border: 0;
+    padding: 10px 20px;
+    color: 1.5rem;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    color: #fff;
+    outline: none;
+}
+
+#btn-add-student button,
+#btn-edit-form button {
+    background-color: #006400;
+    margin-right: 20px;
+}
+
+#btn-add-student .reset,
+#btn-edit-form .reset {
+    background-color: #aaa;
+}
+
+.modal {
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, .5);
+    left: 0;
+    top: 0;
+    position: fixed;
+    display: none;
+}
+
+.modal .modal-content {
+    position: absolute;
+    background-color: #fff;
+    padding: 60px 60px 30px 60px;
+    border-radius: 10px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+}
+
+#student-echarts div {
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+    border: 1px solid #999;
+    width: 500px;
+    height: 500px;
+    box-sizing: border-box;
+    margin: 200px 0px 0px 20px;
+}
