@@ -1,0 +1,52 @@
+body {
+    margin: 0;
+    background: url(./bg.jpg);
+}
+
+.container {
+    width: 100%;
+    height: 150px;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    box-shadow: 0 0 10px #00000044;
+    cursor: pointer;
+}
+
+
+.item {
+    position: absolute;
+    font-size: 12px;
+    border-radius: 5px;
+    box-sizing: border-box;
+    word-break: break-all;
+    top: 0;
+}
+
+.item  span{
+    width: 100%;
+    position: absolute;
+    text-align: center;
+    bottom: 5px;
+    padding: 0 2px;
+    box-sizing: border-box;
+}
+.white {
+    height: 100%;
+    border: 1px solid #00000044;
+    background: #fff;
+    z-index: 1;
+}
+
+.black {
+    height: 96px;
+    border: 1px solid #00000088;
+    background: #444;
+    color: #fff;
+    z-index: 2;
+}
+
+.active {
+    background: #bd87b0;
+}
